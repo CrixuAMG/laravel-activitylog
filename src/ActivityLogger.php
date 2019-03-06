@@ -54,6 +54,13 @@ class ActivityLogger
         return $this;
     }
 
+    public function parentedBy(Model $model)
+    {
+        $this->getActivity()->parent()->associate($model);
+
+        return $this;
+    }
+
     public function on(Model $model)
     {
         return $this->performedOn($model);
