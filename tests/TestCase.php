@@ -9,7 +9,7 @@ use CrixuAMG\ActivityLog\Models\Activity;
 use CrixuAMG\ActivityLog\Test\Models\User;
 use Illuminate\Database\Schema\Blueprint;
 use CrixuAMG\ActivityLog\Test\Models\Article;
-use CrixuAMG\ActivityLog\ActivitylogServiceProvider;
+use CrixuAMG\ActivityLog\ActivityLogServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
@@ -33,7 +33,7 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            ActivitylogServiceProvider::class,
+            ActivityLogServiceProvider::class,
         ];
     }
 

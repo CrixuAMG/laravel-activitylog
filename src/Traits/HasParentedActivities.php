@@ -5,13 +5,21 @@ namespace CrixuAMG\ActivityLog\Traits;
 use CrixuAMG\ActivityLog\ActivityLogServiceProvider;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-trait CausesActivity
+/**
+ * Trait HasParentedActivities
+ *
+ * @package CrixuAMG\ActivityLog\Traits
+ */
+trait HasParentedActivities
 {
-    public function actions(): MorphMany
+    /**
+     * @return MorphMany
+     */
+    public function activities(): MorphMany
     {
         return $this->morphMany(
             ActivityLogServiceProvider::determineActivityModel(),
-            'causer'
+            'parent'
         );
     }
 }

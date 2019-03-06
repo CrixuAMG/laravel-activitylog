@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use CrixuAMG\ActivityLog\ActivityLogger;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use CrixuAMG\ActivityLog\ActivitylogServiceProvider;
+use CrixuAMG\ActivityLog\ActivityLogServiceProvider;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait LogsActivity
@@ -62,7 +62,7 @@ trait LogsActivity
 
     public function activities(): MorphMany
     {
-        return $this->morphMany(ActivitylogServiceProvider::determineActivityModel(), 'subject');
+        return $this->morphMany(ActivityLogServiceProvider::determineActivityModel(), 'subject');
     }
 
     public function getDescriptionForEvent(string $eventName): string

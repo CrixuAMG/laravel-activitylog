@@ -9,7 +9,7 @@ use CrixuAMG\ActivityLog\Exceptions\InvalidConfiguration;
 use CrixuAMG\ActivityLog\Models\Activity as ActivityModel;
 use CrixuAMG\ActivityLog\Contracts\Activity as ActivityContract;
 
-class ActivitylogServiceProvider extends ServiceProvider
+class ActivityLogServiceProvider extends ServiceProvider
 {
     public function boot()
     {
