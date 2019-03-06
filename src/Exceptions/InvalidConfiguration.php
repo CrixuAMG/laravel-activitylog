@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Activitylog\Exceptions;
+namespace CrixuAMG\ActivityLog\Exceptions;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Contracts\Activity;
+use CrixuAMG\ActivityLog\Contracts\Activity;
 
 class InvalidConfiguration extends Exception
 {

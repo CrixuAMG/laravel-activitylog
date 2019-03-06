@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Activitylog\Exceptions;
+namespace CrixuAMG\ActivityLog\Exceptions;
 
 use Exception;
 

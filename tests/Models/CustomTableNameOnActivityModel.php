@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Activitylog\Test\Models;
+namespace CrixuAMG\ActivityLog\Test\Models;
 
-use Spatie\Activitylog\Models\Activity;
+use CrixuAMG\ActivityLog\Models\Activity;
 
 class CustomTableNameOnActivityModel extends Activity
 {

@@ -1,20 +1,20 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Spatie\Activitylog\Models\Activity;
-use Spatie\Activitylog\Test\Models\User;
-use Spatie\Activitylog\Test\Models\Article;
-use Spatie\Activitylog\Traits\LogsActivity;
+use CrixuAMG\ActivityLog\Models\Activity;
+use CrixuAMG\ActivityLog\Test\Models\User;
+use CrixuAMG\ActivityLog\Test\Models\Article;
+use CrixuAMG\ActivityLog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LogsActivityTest extends TestCase
 {
-    /** @var \Spatie\Activitylog\Test\Models\Article|\Spatie\Activitylog\Traits\LogsActivity */
+    /** @var \CrixuAMG\ActivityLog\Test\Models\Article|\CrixuAMG\ActivityLog\Traits\LogsActivity */
     protected $article;
-    /** @var \Spatie\Activitylog\Test\Models\User|\Spatie\Activitylog\Traits\LogsActivity */
+    /** @var \CrixuAMG\ActivityLog\Test\Models\User|\CrixuAMG\ActivityLog\Traits\LogsActivity */
     protected $user;
 
     public function setUp(): void

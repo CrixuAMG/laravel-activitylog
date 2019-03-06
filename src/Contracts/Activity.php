@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Activitylog\Contracts;
+namespace CrixuAMG\ActivityLog\Contracts;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;

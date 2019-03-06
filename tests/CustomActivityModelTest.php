@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
-use Spatie\Activitylog\Test\Models\Activity;
-use Spatie\Activitylog\Test\Models\InvalidActivity;
-use Spatie\Activitylog\Exceptions\InvalidConfiguration;
-use Spatie\Activitylog\Test\Models\AnotherInvalidActivity;
+use CrixuAMG\ActivityLog\Test\Models\Activity;
+use CrixuAMG\ActivityLog\Test\Models\InvalidActivity;
+use CrixuAMG\ActivityLog\Exceptions\InvalidConfiguration;
+use CrixuAMG\ActivityLog\Test\Models\AnotherInvalidActivity;
 
 class CustomActivityModelTest extends TestCase
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Spatie\Activitylog\Traits;
+namespace CrixuAMG\ActivityLog\Traits;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Spatie\Activitylog\ActivityLogger;
+use CrixuAMG\ActivityLog\ActivityLogger;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Activitylog\ActivitylogServiceProvider;
+use CrixuAMG\ActivityLog\ActivitylogServiceProvider;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait LogsActivity

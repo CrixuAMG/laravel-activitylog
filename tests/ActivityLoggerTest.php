@@ -1,14 +1,14 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Spatie\Activitylog\Models\Activity;
-use Spatie\Activitylog\Test\Models\User;
-use Spatie\Activitylog\Test\Models\Article;
-use Spatie\Activitylog\Exceptions\CouldNotLogActivity;
+use CrixuAMG\ActivityLog\Models\Activity;
+use CrixuAMG\ActivityLog\Test\Models\User;
+use CrixuAMG\ActivityLog\Test\Models\Article;
+use CrixuAMG\ActivityLog\Exceptions\CouldNotLogActivity;
 
 class ActivityLoggerTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Activitylog\Traits;
+namespace CrixuAMG\ActivityLog\Traits;
 
-use Spatie\Activitylog\ActivitylogServiceProvider;
+use CrixuAMG\ActivityLog\ActivitylogServiceProvider;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait CausesActivity

@@ -1,15 +1,15 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
 use CreateActivityLogTable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
-use Spatie\Activitylog\Models\Activity;
-use Spatie\Activitylog\Test\Models\User;
+use CrixuAMG\ActivityLog\Models\Activity;
+use CrixuAMG\ActivityLog\Test\Models\User;
 use Illuminate\Database\Schema\Blueprint;
-use Spatie\Activitylog\Test\Models\Article;
-use Spatie\Activitylog\ActivitylogServiceProvider;
+use CrixuAMG\ActivityLog\Test\Models\Article;
+use CrixuAMG\ActivityLog\ActivitylogServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase

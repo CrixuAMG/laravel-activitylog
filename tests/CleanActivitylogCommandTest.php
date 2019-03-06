@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
 use Artisan;
 use Carbon\Carbon;
-use Spatie\Activitylog\Models\Activity;
+use CrixuAMG\ActivityLog\Models\Activity;
 
 class CleanActivitylogCommandTest extends TestCase
 {

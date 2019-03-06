@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
-use Spatie\Activitylog\Models\Activity;
-use Spatie\Activitylog\Test\Models\CustomTableNameOnActivityModel;
+use CrixuAMG\ActivityLog\Models\Activity;
+use CrixuAMG\ActivityLog\Test\Models\CustomTableNameOnActivityModel;
 
 class CustomTableNameModelTest extends TestCase
 {

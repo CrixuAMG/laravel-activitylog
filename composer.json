@@ -1,28 +1,14 @@
 {
-    "name": "spatie/laravel-activitylog",
+    "name": "crixuamg/laravel-activitylog",
     "description": "A very simple activity logger to monitor the users of your website or application",
-    "homepage": "https://github.com/spatie/activitylog",
+    "homepage": "https://github.com/crixuamg/activitylog",
     "keywords":
     [
-        "spatie",
+        "crixuamg",
         "log",
         "user",
         "activity",
         "laravel"
-    ],
-    "authors": [
-        {
-            "name": "Freek Van der Herten",
-            "email": "freek@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        },
-        {
-            "name": "Sebastian De Deyne",
-            "email": "sebastian@spatie.be",
-            "homepage": "https://spatie.be",
-            "role": "Developer"
-        }
     ],
     "require": {
         "php" : "^7.2",
@@ -39,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Activitylog\\": "src"
+            "CrixuAMG\\ActivityLog\\": "src"
         },
         "files": [
             "src/helpers.php"
@@ -47,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Activitylog\\Test\\": "tests"
+            "CrixuAMG\\ActivityLog\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -57,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Activitylog\\ActivitylogServiceProvider"
+                "CrixuAMG\\ActivityLog\\ActivityLogServiceProvider"
             ]
         }
     },

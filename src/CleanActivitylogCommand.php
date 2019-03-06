@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Activitylog;
+namespace CrixuAMG\ActivityLog;
 
 use Carbon\Carbon;
 use Illuminate\Console\Command;

@@ -1,13 +1,13 @@
 <?php
 
-namespace Spatie\Activitylog;
+namespace CrixuAMG\ActivityLog;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Activitylog\Contracts\Activity;
-use Spatie\Activitylog\Exceptions\InvalidConfiguration;
-use Spatie\Activitylog\Models\Activity as ActivityModel;
-use Spatie\Activitylog\Contracts\Activity as ActivityContract;
+use CrixuAMG\ActivityLog\Contracts\Activity;
+use CrixuAMG\ActivityLog\Exceptions\InvalidConfiguration;
+use CrixuAMG\ActivityLog\Models\Activity as ActivityModel;
+use CrixuAMG\ActivityLog\Contracts\Activity as ActivityContract;
 
 class ActivitylogServiceProvider extends ServiceProvider
 {

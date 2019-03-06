@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Activitylog\Test;
+namespace CrixuAMG\ActivityLog\Test;
 
-use Spatie\Activitylog\Test\Models\User;
+use CrixuAMG\ActivityLog\Test\Models\User;
 
 class CausesActivityTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Activitylog;
+namespace CrixuAMG\ActivityLog;
 
 use Illuminate\Config\Repository;
 

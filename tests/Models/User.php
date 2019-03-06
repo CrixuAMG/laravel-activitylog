@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Activitylog\Test\Models;
+namespace CrixuAMG\ActivityLog\Test\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\CausesActivity;
+use CrixuAMG\ActivityLog\Traits\CausesActivity;
 use Illuminate\Contracts\Auth\Authenticatable;
 
 class User extends Model implements Authenticatable
