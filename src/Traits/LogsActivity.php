@@ -38,7 +38,7 @@ trait LogsActivity
                     ->withProperties($model->attributeValuesToBeLogged($eventName));
 
                 if ($model->logParent) {
-                    $model->parent()->associate($model->{$model->logParent});
+                    $logger = $logger->parent()->associate($model->{$model->logParent});
                 }
 
                 if (method_exists($model, 'tapActivity')) {
