@@ -40,6 +40,11 @@ class Activity extends Model implements ActivityContract
         return $this->morphTo();
     }
 
+    public function parent(): MorphTo
+    {
+        return $this->morphTo();
+    }
+
     public function getExtraProperty(string $propertyName)
     {
         return Arr::get($this->properties->toArray(), $propertyName);
