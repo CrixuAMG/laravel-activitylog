@@ -15,7 +15,7 @@ trait HasParentedActivities
     /**
      * @return MorphMany
      */
-    public function activities(): MorphMany
+    public function parentedActivities(): MorphMany
     {
         return $this->morphMany(
             ActivityLogServiceProvider::determineActivityModel(),
