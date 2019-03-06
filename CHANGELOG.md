@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `spatie/laravel-activitylog` will be documented in this file
+All notable changes to `crixuamg/laravel-activitylog` will be documented in this file
 
 ## 3.3.0 - 2019-02-27
 

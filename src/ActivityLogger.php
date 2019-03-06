@@ -165,7 +165,7 @@ class ActivityLogger
 
             $attribute = (string) (new Str($match))->between(':', '.');
 
-            if (! in_array($attribute, ['subject', 'causer', 'properties'])) {
+            if (! in_array($attribute, ['subject', 'causer', 'parent', 'properties'])) {
                 return $match;
             }
 
