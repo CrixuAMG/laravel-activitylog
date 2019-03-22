@@ -139,6 +139,18 @@ class ActivityLogger
 
         $activity = $this->activity;
 
+        $attributes = $activity->subject->getAttributes();
+
+        if (isset(static::$logAttributes) && is_array(static::$logAttributes)) {
+            $attributes = array_merge($attributes, array_diff(static::$logAttributes, ['*']));
+
+            if (in_array('*', static::$logAttributes)) {
+                $attributes = array_merge($attributes, array_keys($this->getAttributes()));
+            }
+        }
+
+        $activity->snapshot = json_encode($attributes);
+
         $activity->description = $this->replacePlaceholders($description, $activity);
 
         $activity->save();
@@ -172,7 +184,7 @@ class ActivityLogger
 
             $attribute = (string) (new Str($match))->between(':', '.');
 
-            if (! in_array($attribute, ['subject', 'causer', 'parent', 'properties'])) {
+            if (!in_array($attribute, ['subject', 'causer', 'parent', 'properties', 'snapshot'])) {
                 return $match;
             }
 
