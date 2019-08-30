@@ -10,6 +10,28 @@ trait DetectsChanges
 {
     protected $oldAttributes = [];
 
+    public static function logChanges(Model $model): array
+    {
+        $changes    = [];
+        $attributes = $model->attributesToBeLogged();
+        $model      = clone $model;
+        $model->append(array_filter($attributes, function ($key) use ($model) {
+            return $model->hasGetMutator($key);
+        }));
+        $model->setHidden(array_diff($model->getHidden(), $attributes));
+        $collection = collect($model);
+
+        foreach ($attributes as $attribute) {
+            if (Str::contains($attribute, '.')) {
+                $changes += self::getRelatedModelAttributeValue($model, $attribute);
+            } else {
+                $changes += $collection->only($attribute)->toArray();
+            }
+        }
+
+        return $changes;
+    }
+
     protected static function bootDetectsChanges()
     {
         if (static::eventsToBeRecorded()->contains('updated')) {
@@ -22,6 +44,19 @@ trait DetectsChanges
                 $model->oldAttributes = static::logChanges($oldValues);
             });
         }
+    }
+
+    protected static function getRelatedModelAttributeValue(Model $model, string $attribute): array
+    {
+        if (substr_count($attribute, '.') > 1) {
+            throw CouldNotLogChanges::invalidAttribute($attribute);
+        }
+
+        list($relatedModelName, $relatedAttribute) = explode('.', $attribute);
+
+        $relatedModel = $model->$relatedModelName ?? $model->$relatedModelName();
+
+        return ["{$relatedModelName}.{$relatedAttribute}" => $relatedModel->$relatedAttribute ?? null];
     }
 
     public function attributesToBeLogged(): array
@@ -53,7 +88,7 @@ trait DetectsChanges
 
     public function shouldLogOnlyDirty(): bool
     {
-        if (! isset(static::$logOnlyDirty)) {
+        if (!isset(static::$logOnlyDirty)) {
             return false;
         }
 
@@ -62,11 +97,11 @@ trait DetectsChanges
 
     public function shouldLogUnguarded(): bool
     {
-        if (! isset(static::$logUnguarded)) {
+        if (!isset(static::$logUnguarded)) {
             return false;
         }
 
-        if (! static::$logUnguarded) {
+        if (!static::$logUnguarded) {
             return false;
         }
 
@@ -79,7 +114,7 @@ trait DetectsChanges
 
     public function attributeValuesToBeLogged(string $processingEvent): array
     {
-        if (! count($this->attributesToBeLogged())) {
+        if (!count($this->attributesToBeLogged())) {
             return [];
         }
 
@@ -103,46 +138,15 @@ trait DetectsChanges
                     return $new <=> $old;
                 }
             );
-            $properties['old'] = collect($properties['old'])
+            $properties['old']        = collect($properties['old'])
                 ->only(array_keys($properties['attributes']))
                 ->all();
         }
 
+        if (empty($properties['attributes']) && empty($properties['old'])) {
+            return [];
+        }
+
         return $properties;
-    }
-
-    public static function logChanges(Model $model): array
-    {
-        $changes = [];
-        $attributes = $model->attributesToBeLogged();
-        $model = clone $model;
-        $model->append(array_filter($attributes, function ($key) use ($model) {
-            return $model->hasGetMutator($key);
-        }));
-        $model->setHidden(array_diff($model->getHidden(), $attributes));
-        $collection = collect($model);
-
-        foreach ($attributes as $attribute) {
-            if (Str::contains($attribute, '.')) {
-                $changes += self::getRelatedModelAttributeValue($model, $attribute);
-            } else {
-                $changes += $collection->only($attribute)->toArray();
-            }
-        }
-
-        return $changes;
-    }
-
-    protected static function getRelatedModelAttributeValue(Model $model, string $attribute): array
-    {
-        if (substr_count($attribute, '.') > 1) {
-            throw CouldNotLogChanges::invalidAttribute($attribute);
-        }
-
-        list($relatedModelName, $relatedAttribute) = explode('.', $attribute);
-
-        $relatedModel = $model->$relatedModelName ?? $model->$relatedModelName();
-
-        return ["{$relatedModelName}.{$relatedAttribute}" => $relatedModel->$relatedAttribute ?? null];
     }
 }

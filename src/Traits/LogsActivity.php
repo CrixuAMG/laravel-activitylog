@@ -32,10 +32,16 @@ trait LogsActivity
                     return;
                 }
 
+                $properties = $model->attributeValuesToBeLogged($eventName);
+
+                if (empty($properties)) {
+                    return;
+                }
+
                 $logger = app(ActivityLogger::class)
                     ->useLog($logName)
                     ->performedOn($model)
-                    ->withProperties($model->attributeValuesToBeLogged($eventName));
+                    ->withProperties($properties);
 
                 if ($model->logParent) {
                     $logger = $logger->parentedBy($model->{$model->logParent});
